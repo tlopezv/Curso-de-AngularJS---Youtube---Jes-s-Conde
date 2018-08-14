@@ -1,0 +1,55 @@
+body{
+    font-family: sans-serif;
+    font-weight: 100;
+    background: #ccc;
+}
+h1{
+    text-align: center;
+    color: #666;
+    text-shadow: 0px 2px 0px #fff;
+}
+
+.nombre{
+    font-size: 18px;
+}
+
+.curso{
+    font-style: italic;
+    font-size: 13px;
+}
+
+.wrapper{
+    width: 650px; /* especificamos el ancho del div*/
+    margin: 0 auto; /* Para colocar el div en el centro de la pantalla */
+    box-shadow: 5px 5px 5px #555; 
+    background: #fff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.contact-item{
+    border-bottom: thin solid #ccc; /* Hace que aparezca una línea separando cada uno de los alumnos*/
+    padding: 10px; /* Le añadimos un padding para que haya un poco de separación entre los alumnos */
+}
+
+button{
+    background: #080;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: thin solid #060;
+    display: block; /* Muestra un elemento como un elemento de bloque (como <p>). Comienza en una nueva línea y ocupa todo el ancho */
+    margin: 5px auto; /* Para colocar el bloque en el centro de la pantalla */
+}
+button:hover{
+    background: #0A0; /* Cambia el color del botón cuando se coloque el cursor sobre este */
+}
+
+input{
+    margin: 0.2em 0em; /* Separamos los campos del formulario verticalmente */
+}
+
+label {
+    display: inline-block; /* Muestra un elemento como un contenedor de bloque de nivel en línea. El elemento en sí está formateado como un elemento en línea, pero puede aplicar valores de altura y ancho */
+    width: 70px;
+}

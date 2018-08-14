@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Utilizamos la directiva "ng-app" para inicializar la aplicación AngularJS -->
+<!-- Toda aplicación en AngularJs tiene un Scope raíz que se crea en la directiva "ng-app" -->
+<!-- Posteriormente otras estructuras pueden generar sus propios scopes, los cuales seguirán
+      una estructura jerárquica -->
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cuaderno Alumnos</title>
+    <!-- Enlace al archivo dónde incluiremos todo el CSS para dar estilo a nuestra página -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<!-- Utilizamos la directiva "ng-controller" para definir que el body 
+    está dentro del alcance de $scope definido en nuestro Controller "AlumnosController" -->
+<body ng-controller="AlumnosController">
+    <h1>Cuaderno Alumnos</h1>
+    <div class="wrapper">
+        <!-- Utilizamos la directiva "ng-repeat" que usamos para mostrar 
+            una lista de elementos de una colección -->
+        <!-- Añadimos un filtro prederterminado para ordenar por curso los elementos -->
+        <!-- https://docs.angularjs.org/guide/filter -->
+        <div class="contact-item" ng-repeat="alumno in alumnos | orderBy:'curso'">
+            <div class="nombre"> {{alumno.nombre}} - {{alumno.telefono}}</div>
+            <span class="curso">{{alumno.curso}}</span>
+        </div>
+    </div>
+
+    <br/>
+    <!-- Añadimos un botón para mostrar y ocultar el formulario de añadir un nuevo alumno-->
+    
+    <!-- La directiva "ng-hide" cuando "formVisibility" sea true, no se mostrará el botón -->
+    <button ng-click="ShowForm()" ng-hide="formVisibility">Añadir Contacto</button>
+    
+    <!-- Añadimos un formulario para añadir nuevos Alumnos -->
+    <!-- La directiva "ng-show" cuando "formVisibility" sea true, se mostrará el formulario -->
+    <div ng-show="formVisibility" class="wrapper">
+        <h2>Añadir un Contacto</h2>
+        <label for="nuevoNombre">Nombre: </label>
+        <!-- Enlazamos las cajas de texto a un objeto que será un nuevo módelo utilizando la directiva "ng-model" s-->
+        <input type="text" id="nuevoNombre" ng-model="nuevoAlumno.nombre"/>
+        <br/>
+        <label for="nuevoTlf">Telefono: </label>
+        <input type="text" id="nuevoTlf" ng-model="nuevoAlumno.telefono"/>
+        <br/>
+        <label for="nuevoCurso">Curso: </label>
+        <input type="text" id="nuevoCurso" ng-model="nuevoAlumno.curso"/>
+        <br/>
+        <!-- Utilizamos la directiva "ng-click" que usará la función "Save" cuando se pulse el botón -->
+        <button ng-click="Save()">Guardar</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="lib/angular/angular.min.js"><\/script>');</script>
+    <script src="scripts1.js" type="text/javascript"></script>
+</body>
+</html>
