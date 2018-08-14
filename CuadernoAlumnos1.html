@@ -20,9 +20,11 @@
     <div class="wrapper">
         <!-- Utilizamos la directiva "ng-repeat" que usamos para mostrar 
             una lista de elementos de una colección -->
-        <div class="contact-item" ng-repeat="alumno in alumnos">
-            <div> {{alumno.nombre}} - {{alumno.telefono}}</div>
-            <span>{{alumno.curso}}</span>
+        <!-- Añadimos un filtro prederterminado para ordenar por curso los elementos -->
+        <!-- https://docs.angularjs.org/guide/filter -->
+        <div class="contact-item" ng-repeat="alumno in alumnos | orderBy:'curso'">
+            <div class="nombre"> {{alumno.nombre}} - {{alumno.telefono}}</div>
+            <span class="curso">{{alumno.curso}}</span>
         </div>
     </div>
     
