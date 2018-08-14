@@ -26,4 +26,15 @@ app.controller('AlumnosController', function($scope){
     // https://docs.angularjs.org/guide/scope
     // Scope es un objeto que se refiere al módelo de la aplicación, y proporciona un contexto
     // de ejecución para las expresiones de las vistas.
+
+    // Creamos la función Save
+    // https://docs.angularjs.org/guide/databinding
+    $scope.Save= function(){
+        $scope.alumnos.push({
+            nombre:$scope.nuevoAlumno.nombre,
+            telefono:$scope.nuevoAlumno.telefono,
+            curso:$scope.nuevoAlumno.curso
+        });
+    }
 });
+
