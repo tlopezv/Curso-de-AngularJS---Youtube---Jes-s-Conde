@@ -22,4 +22,8 @@ app.controller('AlumnosController', function($scope){
         {nombre:"Alberto Herrera", telefono: "1122334455", curso:"Segundo ESO"},
         {nombre:"Ana Mariño", telefono: "6677889900", curso:"Tercero ESO"}
     ]; 
+    // NOTA: Scope determina el alcance, los límites hasta lo que algo tiene vigencia
+    // https://docs.angularjs.org/guide/scope
+    // Scope es un objeto que se refiere al módelo de la aplicación, y proporciona un contexto
+    // de ejecución para las expresiones de las vistas.
 });

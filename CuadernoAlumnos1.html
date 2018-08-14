@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <!-- Utilizamos la directiva "ng-app" para inicializar la aplicación AngularJS -->
+<!-- Toda aplicación en AngularJs tiene un Scope raíz que se crea en la directiva "ng-app" -->
+<!-- Posteriormente otras estructuras pueden generar sus propios scopes, los cuales seguirán
+      una estructura jerárquica -->
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cuaderno Alumnos</title>
+    <!-- Enlace al archivo dónde incluiremos todo el CSS para dar estilo a nuestra página -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <!-- Utilizamos la directiva "ng-controller" para definir que el body 
     está dentro del alcance de $scope definido en nuestro Controller "AlumnosController" -->
 <body ng-controller="AlumnosController">
     <h1>Cuaderno Alumnos</h1>
-    <div>
+    <div class="wrapper">
         <!-- Utilizamos la directiva "ng-repeat" que usamos para mostrar 
             una lista de elementos de una colección -->
-        <div ng-repeat="alumno in alumnos">
+        <div class="contact-item" ng-repeat="alumno in alumnos">
             <div> {{alumno.nombre}} - {{alumno.telefono}}</div>
             <span>{{alumno.curso}}</span>
         </div>
