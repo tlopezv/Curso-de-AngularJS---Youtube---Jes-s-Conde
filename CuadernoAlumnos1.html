@@ -27,8 +27,16 @@
             <span class="curso">{{alumno.curso}}</span>
         </div>
     </div>
+
+    <br/>
+    <!-- Añadimos un botón para mostrar y ocultar el formulario de añadir un nuevo alumno-->
+    
+    <!-- La directiva "ng-hide" cuando "formVisibility" sea true, no se mostrará el botón -->
+    <button ng-click="ShowForm()" ng-hide="formVisibility">Añadir Contacto</button>
+    
     <!-- Añadimos un formulario para añadir nuevos Alumnos -->
-    <div class="wrapper">
+    <!-- La directiva "ng-show" cuando "formVisibility" sea true, se mostrará el formulario -->
+    <div ng-show="formVisibility" class="wrapper">
         <h2>Añadir un Contacto</h2>
         <label for="nuevoNombre">Nombre: </label>
         <!-- Enlazamos las cajas de texto a un objeto que será un nuevo módelo utilizando la directiva "ng-model" s-->
